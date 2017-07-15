@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width initial-scale=1 user-scalable=no">
+<title></title>
+<link rel="stylesheet" type="text/css" href="asserts/css/base2013.css" />
+<link rel="stylesheet" type="text/css"
+	href="asserts/css/search_html5.css" />
+<style type="text/css">
+.centerforward {
+	display: block;
+    font-size: 12px;
+    padding-right: 18px;
+}
+.firstforward {
+	display: block;
+    font-size: 12px;
+    color: #aeaeae;
+    padding-right: 18px;
+}
+.centernext {
+	display: block;
+    font-size: 12px;
+    padding-right: 18px;
+}
+.lastnext {
+	display: block;
+    font-size: 12px;
+    color: #aeaeae;
+    padding-right: 18px;
+}
+</style>
+</head>
+<body id="body">
+	<a name="top"></a>
+	<header>
+		<div id="_hwBox" class="new-header">
+			<a class="new-a-back" href="javascript:history.go(-1);"><span>返回</span></a>
+			<input class="new-srch-box2" id="btnHwBox" placeholder="输入厂家或型号搜索" ng-model="searchText" ng-keyup="myKeyup($event)"/>
+			<a class="new-a-hw" id="btnHwkey"><span ng-click="search()"></span></a>
+		</div>
+	</header>
+
+	<div class="new-ct new-p-re">
+		<div class="new-search">
+			<div class="new-tab-type">
+				<ul class="new-tbl-type">
+					<li style="float: left;"><a class="new-tbl-cell on">商品列表</a></li>
+				</ul>
+			</div>
+
+			<ul class="new-mu_l2w">
+				<li ng-repeat="item in result.rows" class="new-mu_l2"><a ng-click="queryDetail(item)"
+					class="new-mu_l2a"> <span class="new-mu_tmb"> <img
+							src="asserts/images/product.jpg"
+							width="100" height="100" />
+					</span> <span class="new-mu_l2cw"> 
+					<strong class="new-mu_l2h">[{{item.manufactures}}] {{item.model}}</strong>
+							<span class="new-mu_l2h"> <span
+								class="new-txt-rd2 new-elps"></span>
+						</span> <span class="new-mu_l2c"> <strong class="new-txt-rd2">&yen;{{item.price}}</strong>
+						</span>
+						<span class="new-mu_l2c new-p-re"> <span class="new-txt">{{item.address}}</span>
+						</span> 
+						<span class="new-mu_l2c new-p-re"> <span class="new-txt">{{item.godate}}-{{item.downdate}}</span>
+						</span>
+					</span>
+				</a>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="new-paging" ng-hide="ifSearch">
+			<div class="new-tbl-type">
+				<div class="new-tbl-cell">
+					<span class="{{forward}}" ng-click="forwardPage()">上一页</span>
+				</div>
+				<div class="new-tbl-cell new-p-re">{{pageInfo.page}}/{{totalPage}}</div>
+				<div class="new-tbl-cell">
+					<span class="{{next}}" ng-click="nextPage()">下一页</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="new-footer">
+			<div class="new-f-section">
+				<a class="on" href="javascript:void(0)">触屏版</a>
+				<a href="javascript:void(0)">电脑版</a>
+			</div>
+			<div class="new-f-section2">
+				大宗液态危化品和能源在线交易的电子商务平台<br /> 客服热线：17717489888<br /> Copyright
+				&copy; 2017 油贸通在线
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="author" content="m.star365.com">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+<script src="asserts/js/dialog/alertPopShow.js"></script>
+<link rel="stylesheet" href="asserts/js/dialog/common.css">
+
+<link rel="stylesheet" type="text/css" href="asserts/css/base.css" />
+
+<style type="text/css">
+
+</style>
+</head>
+<body id="body">
+	<a name="top"></a>
+	<header>
+		<div class="new-header">
+			<a class="new-a-back" href="javascript:history.go(-1);"><span>返回</span></a>
+			<h2>商品详情</h2>
+			<a class="new-a-hw" id="btnHwkey"><span>油贸通</span></a>
+		</div>
+
+	</header>
+
+<style type="text/css">
+#ware-prop li {
+	padding: 1px;
+	position: relative;
+	float: left;
+}
+
+#ware-prop li span {
+	background-color: #FFFFFF;
+	border: 1px solid #E2E1E3;
+	color: #000000;
+	cursor: pointer;
+	display: block;
+	min-width: 10px;
+	padding: 0 6px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	width: auto !important;
+}
+
+#ware-prop .current span {
+	border: 2px solid #DF0001;
+}
+
+.bulletin {
+	border: 1px dotted #000000;
+	color: #848383;
+	margin-top: 10px;
+	padding: 4px 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+</style>
+
+	<div class="good-detail sift-mg" id="div">
+		<h3 class="h_h3">
+			[{{item.manufactures}}] {{item.model}} &nbsp;&nbsp; <font color="red"> </font>
+		</h3>
+		<div class="view-photo tc">
+			<a href="javascript:void(0)" id="i_pre" class="btn-prev">上一个</a> <span
+				class="mid-img" id="div_img" style="width: 180px; height: 180px">
+				<img id="showPic"
+				src="asserts/images/product_detail.jpg"
+				width="180" height="180" /><br>
+			</span> <a id="i_next" href="javascript:void(0)" class="btn-next">下一个</a>
+		</div>
+		<ul class="mu_lw">
+			<li class="mu_l"><span class="mu_lh">报价： </span> <span
+				class="mu_lc red price-txt" id="jdPriceShow"> &yen;{{item.price}} </span></li>
+
+			<li class="mu_l"><span class="mu_lh">厂家：</span> <span
+				class="mu_lc" id="wareNo">{{item.manufactures}}</span></li>
+
+			<li class="mu_l"><span class="mu_lh">型号：</span> <span
+				class="mu_lc" id="wareNo">{{item.model}} </span></li>
+				
+			<li class="mu_l"><span class="mu_lh">提货地：</span> <span
+				class="mu_lc" id="wareNo">{{item.address}} </span></li>
+
+			<li class="mu_l" id="kucun"><span class="mu_lh">上架日期：</span>
+				<div class="sel-opt" id="store" style="margin-left: 1px;">{{item.godate}}</div></li>
+			<li class="mu_l" id="kucun"><span class="mu_lh">下架日期：</span>
+				<div class="sel-opt" id="store" style="margin-left: 1px;">{{item.downdate}}</div></li>
+
+			<li class="mu_l"><span class="red mgn-bt">温馨提示：默认显示数量为30吨</span>
+			</li>
+
+			<li class="mu_l">
+				<div class="btn-section">
+			</li>
+			<li class="mu_l" id="kucun"><span class="mu_lh" >购买数量（吨）：</span>
+				<div class="sel-opt" id="store" style="margin-left: 1px" >
+					<input type="text" style="border:none;" placeholder="30" ng-change="numChange()" ng-model="num"/>
+				</div></li>
+			<li class="mu_l"><span class="mu_lh">总价：</span> <span
+				class="mu_lc red price-txt" id="jdPriceShow"> &yen;{{totalPrice}} </span></li>
+			<li><span class="btn-tbl-cell" ng-click="showConfirm()"><a id="add_cart" 
+				class="btn-add-cart">下单</a></span>
+			</li>
+	</ul>
+	<div class="parting-line"></div>
+
+	<div class="parting-line"></div>
+	<div class="detail"
+		style="margin-left: 10px; table-layout: fixed; word-break: break-all; overflow: hidden;">
+		<p class="tit">外观:{{result.exterior}}</p>
+		<p class="tit">颜色:{{result.color}}</p>
+		<p class="tit">闪点:{{result.flashPoint}}</p>
+		<p class="tit">倾点:{{result.flowPoint}}</p>
+		<p class="tit">硫含量:{{result.sContent}}</p>
+		<p class="tit">水含量:{{result.wContent}}</p>
+		<p class="tit">密度:{{result.density}}</p>
+		<p class="tit">40℃运动粘度:{{result.viscosity40}}</p>
+		<p class="tit">100℃运动粘度:{{result.viscosity100}}</p>
+		<p class="tit">粘度指数:{{result.viscosityIndex}}</p>
+	</div>
+
+
+	<div class="parting-line"></div>
+</div>
+
+	<footer>
+		<div class="new-footer">
+			<div class="new-f-section">
+				<a class="on" href="javascript:void(0)">触屏版</a>
+				<a href="javascript:void(0)">电脑版</a>
+			</div>
+			<div class="new-f-section2">
+				大宗液态危化品和能源在线交易的电子商务平台<br /> 客服热线：17717489888<br /> Copyright
+				&copy; 2017 油贸通在线
+			</div>
+		</div>
+	</footer>
+	
+
+
+
+
+</body>
+</html>

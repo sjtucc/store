@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="asserts/css/common.css"/>
+    <link rel="stylesheet" href="asserts/css/login.css"/>
+    
+   
+</head>
+<body>
+    <div id="login"></div>
+    <div class="login_bg">
+        <div id="logo">
+            <img src="asserts/images/logo.png" alt=""/>
+        </div>
+        <form action="">
+            <div class="userName">
+                <lable>手机号：</lable>
+                <input type="text" name="name" placeholder="请输入手机号" id="phone" ng-model="credential.phone"/>
+            </div>
+            <div class="passWord">
+                <lable>密&nbsp;&nbsp;&nbsp;码：</lable>
+                <input type="password" name="password" placeholder="请输入密码" id="password" ng-model="credential.password"/>
+            </div>
+            
+            <div class="err">
+                <input class="errMsg" ng-if="errMsg.show" ng-model="errMsg.text" />
+            </div>
+            
+            <div class="choose_box">
+                <div>
+                    <input type="checkbox"  name="checkbox" id="checkbox1"/>
+                    <lable>记住密码</lable>
+                </div>
+                <a ng-click="toRegisterHtml()">注册</a>
+            </div>
+            <button class="login_btn" ng-click="login(credential)" type="button">登&nbsp;&nbsp;录</button>
+         
+        </form>
+        <!-- <div class="other_login">
+            <div class="other"></div>
+            <span>其他方式登录</span>
+            <div class="other"></div>
+        </div>
+        <div class="other_choose">
+            <a href="">
+                <img src="asserts/images/qq.png" alt=""/>
+            </a>
+            <a href="">
+                <img src="asserts/images/wx.png" alt=""/>
+            </a>
+            <a href="">
+                <img src="asserts/images/wb.png" alt=""/>
+            </a>
+        </div> -->
+    </div>
+</body>
+</html>
